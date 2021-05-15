@@ -4,15 +4,15 @@
 {% block title %}{{ user.username }}{% endblock %}
 
 {% block content %}
-  <h1>{{ user.username }}</h1>
-  <form class="form-horizontal" method="post" action="{% url 'users:update' %}">
-    {% csrf_token %}
-    {{ form|crispy }}
-    <div class="control-group">
-      <div class="controls">
-        <button type="submit" class="btn btn-primary">Update</button>
+  <div class="card shadow mx-auto" style="width: 600px">
+    <form class="form-horizontal" method="post" action="{% url 'users:update' %}">
+      <div class="card-body">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <button type="submit" class="btn btn-primary btn-block my-2">Update</button>
       </div>
-    </div>
-  </form>
+    </form>
+  </div>
+
 {% endblock %}
 {%- endraw %}
